@@ -38,6 +38,16 @@ _global_script_classes=[ {
 "class": "GearLibCore",
 "language": "GDScript",
 "path": "res://libaries/GearLib/GearLibCore.gd"
+}, {
+"base": "Node",
+"class": "GearLibRNG",
+"language": "GDScript",
+"path": "res://libaries/GearLib/GearLibRNG.gd"
+}, {
+"base": "Node",
+"class": "GearSignalBus",
+"language": "GDScript",
+"path": "res://libaries/GearLib/GearSignalBus.gd"
 } ]
 _global_script_class_icons={
 "ChirpData": "",
@@ -45,20 +55,23 @@ _global_script_class_icons={
 "ChirpMusicRequest": "",
 "ChirpRequest": "",
 "ChirpSoundRequest": "",
-"GearLibCore": ""
+"GearLibCore": "",
+"GearLibRNG": "",
+"GearSignalBus": ""
 }
 
 [application]
 
 config/name="custom-libraries"
 run/main_scene="res://scenes/non_library/main.tscn"
-config/icon="res://icon.png"
+boot_splash/show_image=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://assets/non_library/retrodead logo.png"
 
 [display]
 
 window/size/width=400
 window/size/height=400
-window/size/borderless=true
 window/size/test_width=400
 window/size/test_height=400
 window/stretch/mode="viewport"
