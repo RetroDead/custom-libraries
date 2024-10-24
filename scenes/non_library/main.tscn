@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/non_library/Wings Macro Sharp.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/non_library/retrodead logo.png" type="Texture" id=2]
+[ext_resource path="res://scenes/non_library/main.gd" type="Script" id=3]
+[ext_resource path="res://scenes/non_library/button_controls.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 extra_spacing_top = 2
@@ -9,28 +13,63 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/styles/disabled = SubResource( 3 )
+Button/styles/focus = SubResource( 3 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 3 )
 
 [node name="main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = SubResource( 2 )
+script = ExtResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.313726, 0.223529, 0.223529, 1 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0.25 )
 margin_left = 8.0
-margin_top = 160.0
-margin_right = 192.0
-margin_bottom = 178.0
+margin_top = 248.0
+margin_right = 392.0
+margin_bottom = 266.0
 text = "LIBRARIES"
 align = 1
 valign = 1
 
 [node name="RetrodeadLogo" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.25 )
-position = Vector2( 96, 80 )
+position = Vector2( 200, 184 )
 texture = ExtResource( 2 )
+
+[node name="button_restart" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.25 )
+margin_left = 8.0
+margin_top = 328.0
+margin_right = 392.0
+margin_bottom = 352.0
+text = "restart"
+
+[node name="button_quit" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.25 )
+margin_left = 8.0
+margin_top = 360.0
+margin_right = 392.0
+margin_bottom = 384.0
+text = "quit"
+
+[node name="button_controls" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
