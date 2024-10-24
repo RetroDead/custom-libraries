@@ -1,5 +1,36 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/non_library/Wings Macro Sharp.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/non_library/retrodead logo.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+extra_spacing_top = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.25 )
+margin_left = 8.0
+margin_top = 160.0
+margin_right = 192.0
+margin_bottom = 178.0
+text = "LIBRARIES"
+align = 1
+valign = 1
+
+[node name="RetrodeadLogo" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.25 )
+position = Vector2( 96, 80 )
+texture = ExtResource( 2 )
