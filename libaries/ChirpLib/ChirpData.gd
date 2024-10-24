@@ -4,7 +4,6 @@ class_name ChirpData
 # This class doesnt do anything, just holds info defined by the user
 
 # -------- sound
-
 enum SOUND_ID {
 	# add your sounds here
 	_empty
@@ -20,7 +19,6 @@ var SOUND_DICT : Dictionary = {
 }
 
 # -------- music
-
 enum MUSIC_ID {
 	# add your music here
 	_empty
@@ -29,6 +27,7 @@ enum MUSIC_ID {
 }
 
 var MUSIC_DICT : Dictionary = {
+	# SOUND_ID.name : "ChirpData/<music_name>
 	MUSIC_ID._empty : "",
 	MUSIC_ID.test_ice_cloud : "res://libaries/ChirpLib/ChirpData/Music/0 ice cloud.wav",
 	MUSIC_ID.test_red_ember : "res://libaries/ChirpLib/ChirpData/Music/3 dark red glow (boss a) demo 2.wav"
