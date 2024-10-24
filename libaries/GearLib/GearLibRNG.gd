@@ -30,9 +30,9 @@ func remove_rng_object(rng_index : int = 0) -> void:
 	if rng_index == 0: return # dont allow _rng to be deleted
 	var obj = _get_rng_object(rng_index)
 	if obj == null or not is_instance_valid(obj): return # no object here
-	obj.call_deferred("free")
+	_set_rng_null_set_by_index(rng_index)
 
-# sets the seed to a new value
+# sets the seed to a new values
 func set_seed(random_seed : int = 0,rng_index : int = 0) -> void:
 	if not _does_rng_object_exist(rng_index): return
 	_get_rng_object(rng_index).set_seed(random_seed)
@@ -49,13 +49,20 @@ func reset_rng_state() -> void:
 
 # -------- private
 
+# checks to see if the value at the rng_index exists, or is null
 func _does_rng_object_exist(rng_index : int) -> bool:
 	if rng_index == 0: return true
 	if (_rng_set.size() - 1) < rng_index: return false
 	
 	var obj = _rng_set[rng_index]
+	print(_rng_set)
+	print("obj = "+str(obj))
 	if obj == null or not is_instance_valid(obj): return false
 	return true
+
+# sets the value at rng_index to null
+func _set_rng_null_set_by_index(rng_index : int) -> void:
+	_rng_set[rng_index] = null
 
 # gets an rng object by using its seed
 func _get_rng_object(rng_index : int = 0) -> RandomNumberGenerator:

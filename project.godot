@@ -45,6 +45,11 @@ _global_script_classes=[ {
 "path": "res://libaries/GearLib/GearLibRNG.gd"
 }, {
 "base": "Node",
+"class": "GearLibTransition",
+"language": "GDScript",
+"path": "res://libaries/GearLib/GearLibTransition/GearLibTransition.gd"
+}, {
+"base": "Node",
 "class": "GearSignalBus",
 "language": "GDScript",
 "path": "res://libaries/GearLib/GearSignalBus.gd"
@@ -57,6 +62,7 @@ _global_script_class_icons={
 "ChirpSoundRequest": "",
 "GearLibCore": "",
 "GearLibRNG": "",
+"GearLibTransition": "",
 "GearSignalBus": ""
 }
 
@@ -67,6 +73,10 @@ run/main_scene="res://scenes/non_library/main.tscn"
 boot_splash/show_image=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://assets/non_library/retrodead logo.png"
+
+[autoload]
+
+GearLibTransitionScene="*res://libaries/GearLib/GearLibTransition/GearLibTransitionScene.tscn"
 
 [display]
 

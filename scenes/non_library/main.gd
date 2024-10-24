@@ -1,14 +1,11 @@
 extends Control
-
-
-
 onready var _bg = $bg
 
 func _physics_process(delta: float) -> void:
 	_bg.color.h += 0.25 * delta
 
 func _ready() -> void:
-	_test_gear_rng()
+	_test_gear_lib_transition()
 
 func _test_chirp() -> void:
 	var _chirp : ChirpLibCore
@@ -47,3 +44,7 @@ func _test_gear_rng() -> void:
 	_gear_rng.remove_rng_object(rng_2)
 	print("\n\n")
 	print("Does rng2 exist?: "+str(_gear_rng._does_rng_object_exist(rng_2)))
+
+func _test_gear_lib_transition() -> void:
+	yield(get_tree().create_timer(1.0,false),"timeout")
+	GearLibTransitionScene.change_scene("res://scenes/non_library/main_2.tscn")
