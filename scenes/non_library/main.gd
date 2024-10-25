@@ -1,13 +1,13 @@
 extends Control
 onready var _bg = $bg
 
-var _g : GearLibPause  = GearLibPause.new()
+var _g : GearPause  = GearPause.new()
 func _physics_process(delta: float) -> void:
-	if _g.get_paused() == false:
-		_bg.color.h += 3.25 * delta
+	_bg.color.h += 3.25 * delta
 
 func _ready() -> void:
-	_test_gear_pause()
+#	add_child(_g)
+	_test_gear_lib_transition()
 
 func _test_chirp() -> void:
 	var _chirp : ChirpLibCore
@@ -26,7 +26,7 @@ func _test_chirp() -> void:
 	#		yield(get_tree().create_timer(0.05,false),"timeout")
 	#		_chirp.resume_music(music_index,pb_pos)
 
-var _gear_rng : GearLibRNG = GearLibRNG.new()
+var _gear_rng : GearRNG = GearRNG.new()
 func _test_gear_rng() -> void:
 	
 	_gear_rng.set_seed(0,0)
@@ -71,7 +71,7 @@ func _test_pearl() -> void:
 
 
 func _test_gear_pause() -> void:
-	add_child(_g)
+	
 	
 	for i in INF:
 		yield(get_tree().create_timer(1,true),"timeout")

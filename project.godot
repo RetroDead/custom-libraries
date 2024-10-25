@@ -9,77 +9,113 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "CharacterBase",
+"language": "GDScript",
+"path": "res://libraries/HeartLib/HeartLibCharacter/CharacterBase.gd"
+}, {
 "base": "Resource",
 "class": "ChirpData",
 "language": "GDScript",
-"path": "res://libaries/ChirpLib/ChirpData.gd"
+"path": "res://libraries/ChirpLib/ChirpData.gd"
 }, {
 "base": "Node",
 "class": "ChirpLibCore",
 "language": "GDScript",
-"path": "res://libaries/ChirpLib/ChirpLibCore.gd"
+"path": "res://libraries/ChirpLib/ChirpLibCore.gd"
 }, {
 "base": "ChirpRequest",
 "class": "ChirpMusicRequest",
 "language": "GDScript",
-"path": "res://libaries/ChirpLib/ChirpMusicRequest.gd"
+"path": "res://libraries/ChirpLib/ChirpMusicRequest.gd"
 }, {
 "base": "Resource",
 "class": "ChirpRequest",
 "language": "GDScript",
-"path": "res://libaries/ChirpLib/ChirpRequest.gd"
+"path": "res://libraries/ChirpLib/ChirpRequest.gd"
 }, {
 "base": "ChirpRequest",
 "class": "ChirpSoundRequest",
 "language": "GDScript",
-"path": "res://libaries/ChirpLib/ChirpSoundRequest.gd"
+"path": "res://libraries/ChirpLib/ChirpSoundRequest.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "ControllerEightDirection",
+"language": "GDScript",
+"path": "res://libraries/HeartLib/HeartLibCharacter/ControllerEightDirection.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "ControllerPlatformer",
+"language": "GDScript",
+"path": "res://libraries/HeartLib/HeartLibCharacter/ControllerPlatformer.gd"
 }, {
 "base": "Node",
 "class": "GearLibCore",
 "language": "GDScript",
-"path": "res://libaries/GearLib/GearLibCore.gd"
-}, {
-"base": "Node",
-"class": "GearLibPause",
-"language": "GDScript",
-"path": "res://libaries/GearLib/GearLibPause.gd"
-}, {
-"base": "Node",
-"class": "GearLibRNG",
-"language": "GDScript",
-"path": "res://libaries/GearLib/GearLibRNG.gd"
+"path": "res://libraries/GearLib/GearLibCore.gd"
 }, {
 "base": "Node",
 "class": "GearLibTransition",
 "language": "GDScript",
-"path": "res://libaries/GearLib/GearLibTransition/GearLibTransition.gd"
+"path": "res://libraries/GearLib/GearLibTransition/GearLibTransition.gd"
+}, {
+"base": "Node",
+"class": "GearPause",
+"language": "GDScript",
+"path": "res://libraries/GearLib/GearLibUtilScripts/GearPause.gd"
+}, {
+"base": "Node",
+"class": "GearRNG",
+"language": "GDScript",
+"path": "res://libraries/GearLib/GearLibUtilScripts/GearRNG.gd"
 }, {
 "base": "Node",
 "class": "GearSignalBus",
 "language": "GDScript",
-"path": "res://libaries/GearLib/GearSignalBus.gd"
+"path": "res://libraries/GearLib/GearLibUtilScripts/GearSignalBus.gd"
+}, {
+"base": "Node2D",
+"class": "HealthComponent",
+"language": "GDScript",
+"path": "res://libraries/HeartLib/HeartLibComponents/HealthComponent.gd"
+}, {
+"base": "Node",
+"class": "HeartLibCore",
+"language": "GDScript",
+"path": "res://libraries/HeartLib/HeartLibCore.gd"
+}, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://libraries/HeartLib/HeartLibComponents/Hurtbox.gd"
 }, {
 "base": "Node",
 "class": "PearlLibCore",
 "language": "GDScript",
-"path": "res://libaries/PearlLib/PearlLibCore.gd"
+"path": "res://libraries/PearlLib/PearlLibCore.gd"
 }, {
 "base": "Resource",
 "class": "PearlLibSaveData",
 "language": "GDScript",
-"path": "res://libaries/PearlLib/PearlLibSaveData.gd"
+"path": "res://libraries/PearlLib/PearlLibSaveData.gd"
 } ]
 _global_script_class_icons={
+"CharacterBase": "",
 "ChirpData": "",
 "ChirpLibCore": "",
 "ChirpMusicRequest": "",
 "ChirpRequest": "",
 "ChirpSoundRequest": "",
+"ControllerEightDirection": "",
+"ControllerPlatformer": "",
 "GearLibCore": "",
-"GearLibPause": "",
-"GearLibRNG": "",
 "GearLibTransition": "",
+"GearPause": "",
+"GearRNG": "",
 "GearSignalBus": "",
+"HealthComponent": "",
+"HeartLibCore": "",
+"Hurtbox": "",
 "PearlLibCore": "",
 "PearlLibSaveData": ""
 }
@@ -94,7 +130,7 @@ config/icon="res://assets/non_library/retrodead logo.png"
 
 [autoload]
 
-GearLibTransitionScene="*res://libaries/GearLib/GearLibTransition/GearLibTransitionScene.tscn"
+GearLibTransitionScene="*res://libraries/GearLib/GearLibTransition/GearLibTransitionScene.tscn"
 
 [display]
 
@@ -131,6 +167,34 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+
+[input]
+
+key_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+key_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+key_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+key_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+key_jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
 }
 
 [physics]
