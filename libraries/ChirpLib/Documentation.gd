@@ -16,8 +16,8 @@ How to play the audio file
 'var _chirp : ChirpLibCore = ChirpLibCore.new()'
 	- Instancing Chirp in an autoload would be best for most use cases
 
-- Now, a request of the corresponding type must be made. If playing a sound, use the ChirpSoundRequest. Use ChirpMusicRequest for music
-'var request : ChirpSoundRequest my_request = ChirpSoundRequest.new()'
+- Now, a request of the corresponding type must be made. If playing a sound, use the ChirpLibSoundRequest. Use ChirpLibMusicRequest for music
+'var request : ChirpLibSoundRequest my_request = ChirpLibSoundRequest.new()'
 
 - At this stage, any of the requests variables can be changed to change the behavior of the sound.
 

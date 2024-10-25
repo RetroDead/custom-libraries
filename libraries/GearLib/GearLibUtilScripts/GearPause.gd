@@ -1,5 +1,5 @@
 extends Node
-class_name GearPause
+class_name GearLibPause
 
 var _pause : bool = false
 

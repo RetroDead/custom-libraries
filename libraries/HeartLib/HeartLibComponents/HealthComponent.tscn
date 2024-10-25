@@ -2,5 +2,5 @@
 
 [ext_resource path="res://libraries/HeartLib/HeartLibComponents/HealthComponent.gd" type="Script" id=1]
 
-[node name="health_component" type="Node2D"]
+[node name="HealthComponent" type="Node"]
 script = ExtResource( 1 )

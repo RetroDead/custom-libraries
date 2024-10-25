@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://libraries/HeartLib/HeartLibComponents/TeamComponent.gd" type="Script" id=1]
+
+[node name="TeamComponent" type="Node"]
+script = ExtResource( 1 )

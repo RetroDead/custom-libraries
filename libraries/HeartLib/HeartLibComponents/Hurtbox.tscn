@@ -3,6 +3,5 @@
 [ext_resource path="res://libraries/HeartLib/HeartLibComponents/Hurtbox.gd" type="Script" id=1]
 
 [node name="hurtbox" type="Area2D" groups=["hurtbox"]]
+modulate = Color( 0.607843, 0.678431, 1, 1 )
 script = ExtResource( 1 )
-
-[node name="hurtbox_shape" type="CollisionShape2D" parent="."]

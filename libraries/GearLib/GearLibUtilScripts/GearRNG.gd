@@ -1,5 +1,5 @@
 extends Node
-class_name GearRNG
+class_name GearLibRNG
 const INITIAL_STATE : int = 0
 
 var _rng : RandomNumberGenerator = RandomNumberGenerator.new()

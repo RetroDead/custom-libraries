@@ -1,5 +1,5 @@
 extends Resource
-class_name ChirpData
+class_name ChirpLibData
 
 # This class doesnt do anything, just holds info defined by the user
 

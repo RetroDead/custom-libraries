@@ -1,5 +1,5 @@
 extends ChirpRequest
-class_name ChirpSoundRequest
+class_name ChirpLibSoundRequest
 
 export var _sound_to_play : int
 

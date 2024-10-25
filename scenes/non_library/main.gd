@@ -1,9 +1,9 @@
 extends Control
 onready var _bg = $bg
 
-var _g : GearPause  = GearPause.new()
+var _g : GearLibPause  = GearLibPause.new()
 func _physics_process(delta: float) -> void:
-	_bg.color.h += 3.25 * delta
+	_bg.color.h += 0.25 * delta
 
 func _ready() -> void:
 #	add_child(_g)
@@ -14,8 +14,8 @@ func _test_chirp() -> void:
 	_chirp = ChirpLibCore.new()
 	add_child(_chirp)
 	
-	var t : ChirpMusicRequest = ChirpMusicRequest.new()
-	t.set_music_to_play(ChirpData.MUSIC_ID.test_ice_cloud)
+	var t : ChirpLibMusicRequest = ChirpLibMusicRequest.new()
+	t.set_music_to_play(ChirpLibData.MUSIC_ID.test_ice_cloud)
 
 	var music_index : int = _chirp.play_music(t)
 	#	var pb_pos : float = 0.0
@@ -26,7 +26,7 @@ func _test_chirp() -> void:
 	#		yield(get_tree().create_timer(0.05,false),"timeout")
 	#		_chirp.resume_music(music_index,pb_pos)
 
-var _gear_rng : GearRNG = GearRNG.new()
+var _gear_rng : GearLibRNG = GearLibRNG.new()
 func _test_gear_rng() -> void:
 	
 	_gear_rng.set_seed(0,0)
@@ -69,10 +69,7 @@ func _test_pearl() -> void:
 	print(_p.get_save_file().get_value("rng").get_seed())
 	_p.save_data()
 
-
 func _test_gear_pause() -> void:
-	
-	
 	for i in INF:
 		yield(get_tree().create_timer(1,true),"timeout")
 		_g.toggle_pause()

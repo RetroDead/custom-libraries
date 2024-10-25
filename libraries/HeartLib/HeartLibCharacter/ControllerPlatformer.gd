@@ -1,5 +1,5 @@
 extends "res://libraries/HeartLib/HeartLibCharacter/CharacterBase.gd"
-class_name ControllerPlatformer
+class_name HeartLibControllerPlatformer
 
 export var _gravity : float = 9.8
 export var _jump_strength : float = 350

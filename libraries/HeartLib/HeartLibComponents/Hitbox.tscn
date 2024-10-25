@@ -1,5 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://libraries/HeartLib/HeartLibComponents/Hitbox.gd" type="Script" id=1]
 
 [node name="hitbox" type="Area2D" groups=["hitbox"]]
-
-[node name="hitbox_shape" type="CollisionShape2D" parent="."]
+modulate = Color( 1, 0.8526, 0.460938, 1 )
+script = ExtResource( 1 )

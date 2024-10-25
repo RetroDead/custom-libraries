@@ -1,5 +1,5 @@
 extends "res://libraries/HeartLib/HeartLibComponents/HeartAreaDetectionInterface.gd"
-class_name HeartLibHurtbox
+class_name HeartLibHittbox
 
 func _on_area_collision(area : Area2D) -> void:
 	return

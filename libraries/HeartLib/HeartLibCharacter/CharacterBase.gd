@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name CharacterBase
+class_name HeartLibCharacterBase
 
 var _current_state : String = "_state_free"
 

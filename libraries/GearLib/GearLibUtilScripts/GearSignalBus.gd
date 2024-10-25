@@ -1,5 +1,5 @@
 extends Node
-class_name GearSignalBus
+class_name GearLibSignalBus
 
 # A predefined script for a singal bus. A Template
 

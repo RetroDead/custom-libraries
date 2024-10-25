@@ -1,5 +1,5 @@
-extends Node2D
-class_name HealthComponent
+extends Node
+class_name HeartLibHealthComponent
 
 export var _health : float
 export var _health_max : float
