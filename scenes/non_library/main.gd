@@ -1,12 +1,13 @@
 extends Control
 onready var _bg = $bg
 
+var _g : GearLibPause  = GearLibPause.new()
 func _physics_process(delta: float) -> void:
-	_bg.color.h += 0.25 * delta
+	if _g.get_paused() == false:
+		_bg.color.h += 3.25 * delta
 
 func _ready() -> void:
-	_test_pearl()
-	
+	_test_gear_pause()
 
 func _test_chirp() -> void:
 	var _chirp : ChirpLibCore
@@ -67,3 +68,11 @@ func _test_pearl() -> void:
 #	_p.get_save_file().set_value("rng",_gear_rng_3)
 	print(_p.get_save_file().get_value("rng").get_seed())
 	_p.save_data()
+
+
+func _test_gear_pause() -> void:
+	add_child(_g)
+	
+	for i in INF:
+		yield(get_tree().create_timer(1,true),"timeout")
+		_g.toggle_pause()

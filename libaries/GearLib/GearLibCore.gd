@@ -5,3 +5,4 @@ class_name GearLibCore
 # Random Number Generation / Seeds
 # Scene Transitions
 # Signal Bus
+# Pause Controller
