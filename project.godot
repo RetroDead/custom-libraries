@@ -53,6 +53,16 @@ _global_script_classes=[ {
 "class": "GearSignalBus",
 "language": "GDScript",
 "path": "res://libaries/GearLib/GearSignalBus.gd"
+}, {
+"base": "Node",
+"class": "PearlLibCore",
+"language": "GDScript",
+"path": "res://libaries/PearlLib/PearlLibCore.gd"
+}, {
+"base": "Resource",
+"class": "PearlLibSaveData",
+"language": "GDScript",
+"path": "res://libaries/PearlLib/PearlLibSaveData.gd"
 } ]
 _global_script_class_icons={
 "ChirpData": "",
@@ -63,7 +73,9 @@ _global_script_class_icons={
 "GearLibCore": "",
 "GearLibRNG": "",
 "GearLibTransition": "",
-"GearSignalBus": ""
+"GearSignalBus": "",
+"PearlLibCore": "",
+"PearlLibSaveData": ""
 }
 
 [application]

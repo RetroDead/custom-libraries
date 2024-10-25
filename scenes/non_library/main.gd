@@ -5,7 +5,8 @@ func _physics_process(delta: float) -> void:
 	_bg.color.h += 0.25 * delta
 
 func _ready() -> void:
-	_test_gear_lib_transition()
+	_test_pearl()
+	
 
 func _test_chirp() -> void:
 	var _chirp : ChirpLibCore
@@ -48,3 +49,21 @@ func _test_gear_rng() -> void:
 func _test_gear_lib_transition() -> void:
 	yield(get_tree().create_timer(1.0,false),"timeout")
 	GearLibTransitionScene.change_scene("res://scenes/non_library/main_2.tscn")
+
+var _p : PearlLibCore = PearlLibCore.new()
+func _test_pearl() -> void:
+	_p.init_save_file()
+	_p.get_save_file().set_value("something",1)
+	print(_p.get_save_file().get_value("something"))
+	
+	for i in 100:
+			_p.get_save_file().set_value(i,i)
+	
+	for i in 100:
+		print(_p.get_save_file().get_value(i))
+	
+#	var _gear_rng_3 : GearLibRNG = GearLibRNG.new()
+#	_gear_rng_3.set_seed(127)
+#	_p.get_save_file().set_value("rng",_gear_rng_3)
+	print(_p.get_save_file().get_value("rng").get_seed())
+	_p.save_data()
