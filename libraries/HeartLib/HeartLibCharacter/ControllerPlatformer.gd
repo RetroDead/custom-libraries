@@ -13,13 +13,11 @@ func _motion() -> void:
 	))
 
 func _test_movement() -> void:
-	set_move_speed(50)
-	set_acceleration(0.5)
 	set_input_vector(get_vector_inputs())
 	_apply_gravity()
 	_jump()
+	_variable_jump_height()
 	_motion()
-
 
 func _apply_gravity() -> void:
 	if not is_on_floor():
@@ -32,6 +30,10 @@ func _jump() -> void:
 	
 	if Input.is_action_pressed("key_jump"):
 		set_motion_vector(Vector2(get_motion_vector().x, - get_jump_strength()))
+
+func _variable_jump_height() -> void:
+	if Input.is_action_just_released("key_jump") and get_motion_vector().y < 0:
+		set_motion_vector(Vector2(get_motion_vector().x,get_motion_vector().y / 3))
 
 func get_jump_strength() -> float:
 	return _jump_strength
