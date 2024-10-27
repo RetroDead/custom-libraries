@@ -7,6 +7,11 @@ func _ready() -> void:
 	connect("area_exited",self,"_on_area_exit")
 	connect("body_exited",self,"_on_body_exit")
 
+# used to retrigger an area's collision
+func _retrigger_area() -> void:
+	monitoring = false
+	monitoring = true
+
 # -------- virtual functions
 # These can be used by anything that extends AREA
 

@@ -3,10 +3,14 @@ class_name HeartLibCharacterBase
 
 var _current_state : String = "_state_free"
 
+const KNOCKBACK_RELEASE_TIME : float = 0.7
+
 export var _move_speed : float
 export var _acceleration : float
-export var _input_vector : Vector2
-export var _motion_vector : Vector2
+
+var _input_vector : Vector2
+var _motion_vector : Vector2
+var _knockback_time : float = 0.0
 
 func _physics_process(delta: float) -> void:
 	call_state()
@@ -23,9 +27,24 @@ func _state_free():
 func get_vector_inputs() -> Vector2:
 	return Input.get_vector("key_left","key_right","key_up","key_down")
 
-
 func _test_movement() -> void:
 	pass
+
+# -------- 
+# TL;DR, keep node structure the same when using components so we can access them easier. wow
+# A little lazy, but i dont want to over complicate this tbh, just needs to be fairly general purpose.
+
+func get_health_component() -> HeartLibHealthComponent:
+	var hc : HeartLibHealthComponent = get_node("HealthComponent")
+	return hc
+
+func get_team_component() -> HeartLibTeamComponent:
+	var tc : HeartLibTeamComponent = get_node("TeamComponent")
+	return tc
+
+func get_destruction_component() -> HeartLibDestructionComponent:
+	var dc : HeartLibDestructionComponent = get_node("DestructionComponent")
+	return dc
 
 # -------- private
 
@@ -58,3 +77,18 @@ func set_input_vector(input_vector : Vector2) -> void:
 
 func get_input_vector() -> Vector2:
 	return _input_vector
+
+func get_knockback_time() -> float:
+	return _knockback_time
+
+func set_knockback_time(knockback_time : float) -> void:
+	_knockback_time = knockback_time
+
+func _knockback_release() -> void:
+	_knockback_time += get_process_delta_time()
+	if _knockback_time >= KNOCKBACK_RELEASE_TIME:
+		_knockback_time = 0
+		set_state("_state_free")
+
+func apply_knockback(knockback_force : float) -> void:
+	return
