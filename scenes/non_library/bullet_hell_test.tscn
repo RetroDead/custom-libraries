@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/non_library/checker_board.png" type="Texture" id=1]
+[ext_resource path="res://scenes/non_library/test_char_bullet_hell.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/non_library/test_enemy_bullet_hell.tscn" type="PackedScene" id=3]
+
+[node name="main" type="Node2D"]
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color( 0.0862745, 0.0745098, 0.109804, 1 )
+margin_right = 400.0
+margin_bottom = 400.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="game" type="Node2D" parent="."]
+
+[node name="test_char_bullet_hell" parent="game" instance=ExtResource( 2 )]
+position = Vector2( 32, 192 )
+_move_speed = 150.0
+_focus_speed = 100.0
+
+[node name="test_enemy_bullet_hell" parent="game" instance=ExtResource( 3 )]
+position = Vector2( 368, 192 )

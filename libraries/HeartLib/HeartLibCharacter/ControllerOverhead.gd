@@ -1,10 +1,18 @@
 extends "res://libraries/HeartLib/HeartLibCharacter/CharacterBase.gd"
 class_name HeartLibControllerOverhead
 
+export var _focus_speed : float = 66
 var _last_facing_direction : Vector2
 
 func _motion() -> void:
-	set_motion_vector(lerp(get_motion_vector(),get_vector_inputs() * get_move_speed(), get_acceleration()))
+	var _active_speed : float
+	
+	if Input.is_action_pressed("key_focus"):
+		_active_speed = get_focus_speed()
+	else:
+		_active_speed = get_move_speed()
+	
+	set_motion_vector(lerp(get_motion_vector(),get_vector_inputs() * _active_speed, get_acceleration()))
 
 func _test_movement() -> void:
 	_remember_last_facing_direction()
@@ -46,3 +54,10 @@ func _state_knockback() -> void:
 #	var _line_prev : Line2D = $prev_vec
 #	var _prev_vec : Vector2 = Vector2(64,64) * get_last_facing_direction() * Vector2(-1,-1)
 #	_line_prev.set_points([Vector2.ZERO,_prev_vec])
+# --------
+
+func get_focus_speed() -> float:
+	return _focus_speed
+
+func set_focus_speed(focus_speed) -> void:
+	_focus_speed = focus_speed

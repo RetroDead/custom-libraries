@@ -57,7 +57,6 @@ func _increment_coyote_time() -> void:
 	_coyote_time = 0
 
 func _jump() -> void:
-	DEBUG_spawn_bullet()
 	if Input.is_action_pressed("key_jump"):
 		if (get_coyote_time() <= COYOTE_TIME_CHECK) or (is_on_floor()):
 			set_coyote_time(COYOTE_TIME_CHECK + 1.0) # lol
@@ -115,12 +114,6 @@ func _state_knockback():
 	if is_on_floor():
 		_knockback_time = 0
 		set_state("_state_free")
-
-func DEBUG_spawn_bullet() -> void:
-	var b = load("res://libraries/HeartLib/HeartLibObjects/Bullet.tscn").instance()
-	get_parent().add_child(b)
-	b.global_position = global_position
-
 #func _process(delta):
 #	var m1 = get_motion_vector()
 #	yield(VisualServer,"frame_post_draw")

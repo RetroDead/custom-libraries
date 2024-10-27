@@ -20,14 +20,18 @@ func _physics_process(delta) -> void:
 # -------- private
 
 func _destroy() -> void:
-	print("destroying bullet..")
 	queue_free()
 
 func _is_off_screen() -> void:
 	if not _visibility.is_on_screen():
-		_destroy()
+		yield(get_tree().create_timer(0.05,false),"timeout")
+		if not _visibility.is_on_screen():
+			_destroy()
 
 # --------
+
+func get_expire_timer() -> Timer:
+	return _expire_timer
 
 func get_bullet_speed() -> float:
 	return _bullet_speed
