@@ -10,23 +10,17 @@ onready var _visibility : VisibilityNotifier2D = $Visibility
 
 func _ready() -> void:
 	_expire_timer.connect("timeout",self,"_destroy")
+	_visibility.connect("screen_exited",self,"_destroy")
 
 func _physics_process(delta) -> void:
 	set_bullet_speed(get_bullet_speed() + get_acceleration() * delta)
 	position += transform.x * get_bullet_speed() * delta
 	rotation_degrees += get_rotation_speed() * delta
-	_is_off_screen()
 
 # -------- private
 
 func _destroy() -> void:
 	queue_free()
-
-func _is_off_screen() -> void:
-	if not _visibility.is_on_screen():
-		yield(get_tree().create_timer(0.05,false),"timeout")
-		if not _visibility.is_on_screen():
-			_destroy()
 
 # --------
 

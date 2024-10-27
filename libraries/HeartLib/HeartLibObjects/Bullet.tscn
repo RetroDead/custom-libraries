@@ -31,5 +31,6 @@ margin_right = 7.0
 margin_bottom = 3.0
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
 
 [editable path="Hitbox"]
