@@ -1,5 +1,5 @@
 extends Node
-class_name HeartLibComponentLink
+class_name DEPRIACATED_HeartLibComponentLink
 
 "NOTE : '_use_auto_link_structure' requires the links parent be the component, and the components parent be the user"
 

@@ -21,15 +21,15 @@ func rng_check_range(min_value : int = 0, max_value : int = 1,rng_index : int = 
 
 # allows for the use of multiple rng objects
 func add_rng_object() -> int:
-	var rng = RandomNumberGenerator.new()
-	_rng_set.append(rng)
-	return _rng_set.find(rng)
+	var _rng = RandomNumberGenerator.new()
+	_rng_set.append(_rng)
+	return _rng_set.find(_rng)
 
 # removes an rng object by its index
 func remove_rng_object(rng_index : int = 0) -> void:
 	if rng_index == 0: return # dont allow _rng to be deleted
-	var obj = _get_rng_object(rng_index)
-	if obj == null or not is_instance_valid(obj): return # no object here
+	var _obj = _get_rng_object(rng_index)
+	if _obj == null or not is_instance_valid(_obj): return # no object here
 	_set_rng_null_set_by_index(rng_index)
 
 # sets the seed to a new values
@@ -54,10 +54,10 @@ func _does_rng_object_exist(rng_index : int) -> bool:
 	if rng_index == 0: return true
 	if (_rng_set.size() - 1) < rng_index: return false
 	
-	var obj = _rng_set[rng_index]
-	print(_rng_set)
-	print("obj = "+str(obj))
-	if obj == null or not is_instance_valid(obj): return false
+	var _obj = _rng_set[rng_index]
+#	print(_rng_set)
+#	print("obj = "+str(_obj))
+	if _obj == null or not is_instance_valid(_obj): return false
 	return true
 
 # sets the value at rng_index to null

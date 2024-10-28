@@ -22,4 +22,4 @@ _move_speed = 150.0
 _focus_speed = 100.0
 
 [node name="test_enemy_bullet_hell" parent="game" instance=ExtResource( 3 )]
-position = Vector2( 368, 192 )
+position = Vector2( 240, 144 )

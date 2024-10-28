@@ -35,16 +35,16 @@ func _test_movement() -> void:
 # A little lazy, but i dont want to over complicate this tbh, just needs to be fairly general purpose.
 
 func get_health_component() -> HeartLibHealthComponent:
-	var hc : HeartLibHealthComponent = get_node("HealthComponent")
-	return hc
+	var _hc : HeartLibHealthComponent = get_node("HealthComponent")
+	return _hc
 
 func get_team_component() -> HeartLibTeamComponent:
-	var tc : HeartLibTeamComponent = get_node("TeamComponent")
-	return tc
+	var _tc : HeartLibTeamComponent = get_node("TeamComponent")
+	return _tc
 
 func get_destruction_component() -> HeartLibDestructionComponent:
-	var dc : HeartLibDestructionComponent = get_node("DestructionComponent")
-	return dc
+	var _dc : HeartLibDestructionComponent = get_node("DestructionComponent")
+	return _dc
 
 # -------- private
 

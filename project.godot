@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://libraries/ChirpLib/ChirpRequest.gd"
 }, {
+"base": "Node",
+"class": "DEPRIACATED_HeartLibComponentLink",
+"language": "GDScript",
+"path": "res://libraries/_throwaway/HeartLibComponentLink.gd"
+}, {
 "base": "Resource",
 "class": "DEPRICATED_HeartLibLinkContainer",
 "language": "GDScript",
@@ -83,11 +88,6 @@ _global_script_classes=[ {
 "class": "HeartLibCharacterBase",
 "language": "GDScript",
 "path": "res://libraries/HeartLib/HeartLibCharacter/CharacterBase.gd"
-}, {
-"base": "Node",
-"class": "HeartLibComponentLink",
-"language": "GDScript",
-"path": "res://libraries/HeartLib/HeartLibComponents/HeartLibComponentLink.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "HeartLibControllerOverhead",
@@ -145,6 +145,7 @@ _global_script_class_icons={
 "ChirpLibMusicRequest": "",
 "ChirpLibSoundRequest": "",
 "ChirpRequest": "",
+"DEPRIACATED_HeartLibComponentLink": "",
 "DEPRICATED_HeartLibLinkContainer": "",
 "GearLibCore": "",
 "GearLibPause": "",
@@ -155,7 +156,6 @@ _global_script_class_icons={
 "HeartLibBullet": "",
 "HeartLibBulletSpawner": "",
 "HeartLibCharacterBase": "",
-"HeartLibComponentLink": "",
 "HeartLibControllerOverhead": "",
 "HeartLibControllerPlatformer": "",
 "HeartLibCore": "",

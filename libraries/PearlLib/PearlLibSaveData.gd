@@ -42,5 +42,5 @@ func save_game_data() -> void:
 
 func load_save_data() -> void:
 	if ResourceLoader.exists(SAVE_PATH):
-		var loaded_data : PearlLibSaveData = ResourceLoader.load(SAVE_PATH)
-		_read_from_save_data(loaded_data)
+		var _loaded_data : PearlLibSaveData = ResourceLoader.load(SAVE_PATH)
+		_read_from_save_data(_loaded_data)

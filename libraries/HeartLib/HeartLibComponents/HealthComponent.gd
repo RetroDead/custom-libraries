@@ -8,7 +8,7 @@ signal health_at_max
 signal health_at_zero
 
 func take_damage(damage : float) -> void:
-	print("damage taken: "+str(damage))
+#	print("damage taken: "+str(damage))
 	set_health(clamp(_health - damage,0,_health_max))
 	check_health()
 

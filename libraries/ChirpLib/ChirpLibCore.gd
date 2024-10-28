@@ -83,16 +83,16 @@ func stop_music(music_player_index : int) -> void:
 # RETURNS where in playback the music player was when paused
 func pause_music(music_player_index : int) -> float:
 	if music_player_index == NONEXISTING_PLAYER: return 0.0
-	var music_player = _get_music_player(music_player_index)
-	music_player._set_playing(false)
-	return music_player.get_playback_position()
+	var _music_player = _get_music_player(music_player_index)
+	_music_player._set_playing(false)
+	return _music_player.get_playback_position()
 
 # resumes a given music player from the _music_players array given where to resume playback
 func resume_music(music_player_index : int,playback_pos : float) -> void:
 	if music_player_index == NONEXISTING_PLAYER: return
-	var music_player = _get_music_player(music_player_index)
-	music_player._set_playing(true)
-	music_player.seek(playback_pos)
+	var _music_player = _get_music_player(music_player_index)
+	_music_player._set_playing(true)
+	_music_player.seek(playback_pos)
 
 # gets a music player from the _music_players array given an index
 func _get_music_player(music_player_index : int) -> AudioStreamPlayer:
